@@ -146,7 +146,6 @@ smmap
 sniffio==1.3.0
 soupsieve==2.4.1
 SpeechRecognition
-SQLAlchemy==2.0.17
 streamlit
 run 
 tenacity
