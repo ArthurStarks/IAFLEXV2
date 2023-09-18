@@ -99,7 +99,7 @@ pandas
 patsy==0.5.3
 pdfminer.six==20221105
 pdfplumber
-pip
+--upgrade pip
 Pillow
 pipeline
 pipreqs
