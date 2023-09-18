@@ -73,7 +73,6 @@ jsonschema==4.17.3
 keras
 kiwisolver==1.4.4
 langchain
-langchainplus-sdk
 libclang==16.0.0
 lxml==4.9.2
 Markdown==3.4.3
