@@ -148,8 +148,6 @@ soupsieve==2.4.1
 SpeechRecognition
 SQLAlchemy==2.0.17
 streamlit
-sympy
-
 run 
 tenacity
 tensorboard
