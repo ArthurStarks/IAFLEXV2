@@ -132,7 +132,6 @@ python-utils
 pyttsx3
 pytz
 pytz-deprecation-shim==0.1.0.post0
-pywin32
 PyYAML==6.0
 regex
 requests
