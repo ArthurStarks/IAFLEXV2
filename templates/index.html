@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>  FLEXSTARTIT </title>
+
+    <!-- Custom fonts for this template-->
+        <!-- <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css"> -->
+
+    <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{{ url_for('static', filename='css/sb-admin-2.min.css') }}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <div class="sidebar-brand-icon ">
+                    <!-- <i class="fas fa-laugh-wink"></i> -->
+                    <img src="{{ url_for('static', filename='img/Blue FSFichier 3@4x.png') }}" alt="Logo FLEXSTARTIT" width="25">
+
+                </div>
+                <div class="sidebar-brand-text mx-3"> FLEXSTARTIT  
+                    <!-- <sup>2</sup> -->
+                </div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+           
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Interface
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Mes agents</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Je choisis un agent:</h6>
+                        <a class="collapse-item" id="dailyTask" href="#">Daily Task</a>
+                        <a class="collapse-item" id="Fitgaps" href="#">Fitgap</a>
+                        <a class="collapse-item" id="Modélisation" href="#">Modélisation</a>
+                        <a class="collapse-item" id="Emailing" href="#">Emailing</a>
+                        <a class="collapse-item" id="DéveloppementJs" href="#">Développement js</a>
+                        <a class="collapse-item" id="DéveloppementPlugins" href="#">Développement plugins</a>
+                        <a class="collapse-item" id="PowerAutomate" href="#">Power automate</a>
+                        <a class="collapse-item" id="LearningCrm365" href="#">Learning CRM 365</a>
+                        <a class="collapse-item" id="Spécifications" href="#">Spécifications</a>
+                        <a class="collapse-item" id="LastDayTasks" href="#">Last day tasks</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <!-- <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Utilities</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Utilities:</h6>
+                        <a class="collapse-item" href="#">Colors</a>
+                        <a class="collapse-item" href="#">Borders</a>
+                        <a class="collapse-item" href="#">Animations</a>
+                        <a class="collapse-item" href="#">Other</a>
+                    </div>
+                </div>
+            </li> -->
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Addons
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Pages</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Mes pages:</h6>
+                        <a class="collapse-item" href="{{ url_for('index') }}">Accueil</a>
+                        <!-- <a class="collapse-item" href="#">Connexion</a>
+                        <a class="collapse-item" href="#">Inscription</a> -->
+                        <!-- <div class="collapse-divider"></div> -->
+                        <!-- <h6 class="collapse-header">Qui sommes nous?</h6> -->
+                        <a class="collapse-item" href="#">Qui sommes nous?</a>
+                        <a class="collapse-item" href="#">Contacts</a>
+                        <!-- <a class="collapse-item" href="#">Blank Page</a> -->
+                    </div>
+                </div>
+            </li>
+
+            
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+            <!-- Sidebar Message -->
+            <div class="sidebar-card d-none d-lg-flex">
+                <img class="sidebar-card-illustration mb-2" src="{{ url_for('static', filename='img/Blue FSFichier 3@4x.png') }}" alt="...">
+                <p class="text-center mb-2"><strong>FLEXSTARTIT Pro</strong> La version pro sera bientot disponible!</p>
+                <a class="btn btn-success btn-sm" href="#">Upgrade to Pro!</a>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    
+
+                    <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form> -->
+                    
+                    <!-- Liste déroulante -->
+                    <!-- <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="agentDropdown" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Choisissez un agent
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="agentDropdown">
+                            <a class="dropdown-item" id="dailyTask" href="#">Daily Task</a>
+                            <a class="dropdown-item" id="Fitgaps" href="#">Fitgap</a>
+                            <a class="dropdown-item" id="Modélisation" href="#">Modélisation</a>
+                            <a class="dropdown-item" id="Emailing" href="#">Emailing</a>
+                            <a class="dropdown-item" id="DéveloppementJs" href="#">Développement js</a>
+                            <a class="dropdown-item" id="DéveloppementPlugins" href="#">Développement plugins</a>
+                            <a class="dropdown-item" id="PowerAutomate" href="#">Power automate</a>
+                            <a class="dropdown-item" id="LearningCrm365" href="#">Learning CRM 365</a>
+                            <a class="dropdown-item" id="Spécifications" href="#">Spécifications</a>
+                            <a class="dropdown-item" id="LastDayTasks" href="#">Last day tasks</a>
+                        </div>
+                    </div>
+                     -->
+                    
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+
+                        <!-- <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for your account.
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            </div>
+                        </li> -->
+
+                        <!-- Nav Item - Messages -->
+                        <!-- <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <span class="badge badge-danger badge-counter">7</span>
+                            </a>
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="messagesDropdown">
+                                <h6 class="dropdown-header">
+                                    Message Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                                            alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                                            problem I've been having.</div>
+                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                                            alt="...">
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">I have the photos that you ordered last month, how
+                                            would you like them sent to you?</div>
+                                        <div class="small text-gray-500">Jae Chun · 1d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                                            alt="...">
+                                        <div class="status-indicator bg-warning"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Last month's report looks great, I am very happy with
+                                            the progress so far, keep up the good work!</div>
+                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                            alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
+                                            told me that people say this to all dogs, even if they aren't good...</div>
+                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                            </div>
+                        </li> -->
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <!-- <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Gaspard BASHALA</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a> -->
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">
+                            
+                            <div id="resultDiv"></div>
+                        </h1>
+                        <!-- <a href="/login" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Connexion</a> -->
+                    </div>
+
+                    <!-- Content Row -->
+                    <!-- <div class="row">
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Daily Task</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Earnings (Annual)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="progress progress-sm mr-2">
+                                                        <div class="progress-bar bg-info" role="progressbar"
+                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Pending Requests</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- Content Row -->
+
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <!-- <h6 class="m-0 font-weight-bold text-primary">Formulaire de l'agent</h6> -->
+                                    <h6 class="m-0 font-weight-bold text-primary">Formulaire de l'agent <span id="selectedValueAgent"></span></h6>
+
+                                    <!-- <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body" id="blocAgent">
+                                <div id="dailyTaskForm">
+                                {% if prompt == '' %}
+                                                                        
+                                    <form id="ThedailyTaskForm" action="{{ url_for('index') }}" method="POST" autocomplete="off">
+                                        <div id="container">
+                                            <div id="remplirForm" style="margin-bottom: 20px;">Merci de remplir le formulaire ci dessous!
+                                            
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="clientName">Entrer le nom du client :</label>
+                                            <input type="text" class="form-control" id="clientName" name="clientName" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="language">Choisir une langue :</label>
+                                            <select class="form-control" id="language" name="language">
+                                                <option value="francais">Français</option>
+                                                <option value="anglais">Anglais</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="context">Entrer le contexte :</label>
+                                            <textarea class="form-control" id="context" name="context" rows="4" required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="objectives">Entrer les objectifs de la journée :</label>
+                                            <textarea class="form-control" id="objectives" name="objectives" rows="4" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Soumettre</button>
+                                    </form>
+                                    {% else %}
+                                    <div id="resultatPromt">
+                                        <!-- {{prompt}} -->
+                                        <span id="promptValue">{{ prompt }}</span>
+                                        <div id="boutonAction" style="text-align: center;">
+                                            <div style="height: 100px; display: inline-block;"></div>
+                                            <button id="copier" class="btn btn-primary">Copier</button>
+                                            <div style="width: 100px; display: inline-block;"></div>
+                                            <button id="revenirFormulaire" class="btn btn-primary">Revenir au formulaire</button>
+                                        </div>
+                                    </div>
+                                    
+                                    {% endif %}
+
+                                </div>
+
+                                    <!-- Formulaire pour agent non disponible -->
+                                    <form id="formNonDisponible" class="d-none" action="{{ url_for('vote') }}" method="POST" autocomplete="off">
+                                        <p>Cet agent n'est pas encore disponible, il est en cours de développement.</p>
+                                        
+                                        <p>Êtes-vous intéressé par cet agent ?</p>
+                                        
+                                        <div class="form-group">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input interesse" type="radio" name="interesse" id="interesse1" value="1">
+
+                                                <label class="form-check-label" for="interesse1">1 - Pas du tout</label>
+                                            </div>
+                                            
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input interesse" type="radio" name="interesse" id="interesse2" value="2">
+                                                <label class="form-check-label" for="interesse2">2 - Peu intéressé</label>
+                                            </div>
+                                            
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input interesse" type="radio" name="interesse" id="interesse3" value="3" checked>
+                                                <label class="form-check-label" for="interesse3">3 - Neutre</label>
+                                            </div>
+                                            
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input interesse" type="radio" name="interesse" id="interesse4" value="4">
+                                                <label class="form-check-label" for="interesse4">4 - Intéressé</label>
+                                            </div>
+                                            
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input " type="radio" name="interesse" id="interesse5" value="5">
+                                                <label class="form-check-label" for="interesse5">5 - Très intéressé</label>
+                                            </div>
+
+                                            <input type="hidden" id="selectedInterest" name="selectedInterest" value="">
+
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-primary" id="soumettre" >Soumettre</button>
+
+                                    </form>
+
+
+                                    
+                                    <div>
+                                    </div>
+
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pie Chart -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Description de l'agent <span id="selectedValueAgentDescrip"></span></h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                      
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                
+                                <div class="card-body" >
+                                    <div id="resultDivDescription"></div>
+                                    <div class="chart-pie pt-4 pb-2">
+                                        <canvas id="myPieChart"></canvas>
+                                    </div>
+                                    <div class="mt-4 text-center small">
+                                        <span class="mr-2">
+                                            <a href="https://www.facebook.com/" target="_blank">
+                                                <i class="fab fa-facebook text-primary-light"></i> Facebook
+                                            </a>
+                                        </span>
+                                        <span class="mr-2">
+                                            <a href="https://www.linkedin.com/" target="_blank">
+                                                <i class="fab fa-linkedin text-info-light"></i> LinkedIn
+                                            </a>
+                                        </span>
+                                        <span class="mr-2">
+                                            <a href="https://twitter.com/" target="_blank">
+                                                <i class="fab fa-twitter text-primary-light"></i> Twitter
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <!-- <div class="mt-4 text-center small">
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-primary"></i> Direct
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-success"></i> Social
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-info"></i> Referral
+                                        </span>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src='{{url_for("static",filename="vendor/jquery/jquery.min.js")}}'></script>
+    <script src='{{url_for("static",filename="vendor/bootstrap/js/bootstrap.bundle.min.js")}}'></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src='{{url_for("static",filename="vendor/jquery-easing/jquery.easing.min.js")}}'></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src='{{url_for("static",filename="vendor/chart.js/Chart.min.js")}}'></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+</body>
+<!-- Ajoutez ceci à votre fichier HTML pour gérer les clics sur les liens -->
+
+<script>
+// Sélectionnez tous les liens par leur identifiant unique
+var dailyTaskLink = document.getElementById("dailyTask");
+var fitgapLink = document.getElementById("Fitgaps");
+var ModélisationLink = document.getElementById("Modélisation");
+var EmailingLink = document.getElementById("Emailing");
+var DéveloppementJsLink = document.getElementById("DéveloppementJs");
+var DéveloppementPluginsLink = document.getElementById("DéveloppementPlugins");
+var PowerAutomateLink = document.getElementById("PowerAutomate");
+var LearningCrm365Link = document.getElementById("LearningCrm365");
+var SpécificationsLink = document.getElementById("Spécifications");
+var LastDayTasksLink = document.getElementById("LastDayTasks");
+
+var selectedValueSpan = document.getElementById("selectedValueAgent");
+var selectedValueSpanDescript = document.getElementById("selectedValueAgentDescrip");
+// ... Sélectionnez d'autres liens ...
+
+// Sélectionnez la <div> où vous souhaitez afficher la valeur sélectionnée
+var resultDiv = document.getElementById("resultDiv");
+var resultDivdescrip = document.getElementById("resultDivDescription");
+
+// Vérifiez si la div est vide (aucun contenu)
+if (resultDiv.textContent.trim() === "") {
+        // Si la div est vide, ajoutez le texte par défaut
+        resultDiv.textContent = "Je suis l'Agent CRM FLEX - Daily Task à votre service :";
+    }
+
+if (selectedValueSpan.textContent.trim() === "") {
+    // Si la div est vide, ajoutez le texte par défaut
+    selectedValueSpan.textContent = "- Daily Task";
+}
+
+if (selectedValueSpanDescript.textContent.trim() === "") {
+    // Si la div est vide, ajoutez le texte par défaut
+    selectedValueSpanDescript.textContent = "- Daily Task";
+}
+
+var DescriptionDalilyTask= "Planifiez et organisez votre journée de travail en priorisant les tâches essentielles avec notre fonction Daily Task. L'agent IA analyse vos obligations et vous propose un agenda optimisé pour une efficacité maximale. De plus, il prépare une proposition d'e-mail pour vous permettre de communiquer facilement avec le client final.";
+
+if (resultDivdescrip.textContent.trim() === "") {
+    // Si la div est vide, ajoutez le texte par défaut
+    resultDivdescrip.textContent = DescriptionDalilyTask;
+}
+
+
+// Fonction pour gérer les clics sur les liens
+function handleClick(event) {
+    // Empêchez le comportement par défaut du lien (la navigation)
+    event.preventDefault();
+
+    // Récupérez le texte du lien cliqué
+    var selectedValue = event.target.textContent;
+
+    // Créez un élément <strong> pour mettre en gras selectedValue
+        var strongElement = document.createElement("strong");
+        strongElement.textContent = selectedValue;
+
+     // Créez la phrase complète avec les éléments textuels et <strong>
+        var text1 = "Je suis l'Agent CRM FLEX - ";
+        var text2 = " à votre service : ";
+
+    // Effacez d'abord le contenu précédent
+        resultDiv.textContent = "";
+
+    // Ajoutez les éléments au contenu de la <div>
+        resultDiv.appendChild(document.createTextNode(text1));
+        resultDiv.appendChild(strongElement);
+        resultDiv.appendChild(document.createTextNode(text2));
+
+
+    
+
+    // Mettez à jour le contenu de la <div> avec le texte sélectionné
+    // resultDiv.textContent = "Je suis l'Agent CRM FLEX - "+ selectedValue +" à votre service : ";
+     // Mettez à jour le contenu de l'élément <span> dans la balise <h6>
+    selectedValueSpan.textContent = " - " + selectedValue;
+    selectedValueSpanDescript.textContent = " - " + selectedValue;
+    
+    afficherValeur(selectedValue);
+      
+}
+
+// Ajoutez un gestionnaire d'événements "click" à chaque lien
+dailyTaskLink.addEventListener("click", handleClick);
+fitgapLink.addEventListener("click", handleClick);
+ModélisationLink.addEventListener("click", handleClick);
+EmailingLink.addEventListener("click", handleClick);
+DéveloppementJsLink.addEventListener("click", handleClick);
+DéveloppementPluginsLink.addEventListener("click", handleClick);
+PowerAutomateLink.addEventListener("click", handleClick);
+LearningCrm365Link.addEventListener("click", handleClick);
+SpécificationsLink.addEventListener("click", handleClick);
+LastDayTasksLink.addEventListener("click", handleClick);
+// Ajoutez des gestionnaires d'événements pour les autres liens de la même manière
+
+
+function afficherValeur(selectedValue) {
+    var DescriptionDalilyTask= "Planifiez et organisez votre journée de travail en priorisant les tâches essentielles avec notre fonction Daily Task. L'agent IA analyse vos obligations et vous propose un agenda optimisé pour une efficacité maximale. De plus, il prépare une proposition d'e-mail pour vous permettre de communiquer facilement avec le client final.";
+    var DescriptionFitgap = "Identifiez rapidement les écarts entre vos besoins actuels et les capacités de CRM 365. Notre agent IA analyse en profondeur vos processus et recommande des adaptations pour combler les lacunes. À la fin de l'analyse, un fichier Excel détaillé est généré pour vous fournir un aperçu complet.";
+    var DescriptionModelisationMCD = "Bénéficiez d'une représentation visuelle de la structure de vos données grâce à la Modélisation Conceptuelle des Données (MCD). L'agent IA transforme vos informations en diagrammes MCD clairs, facilitant ainsi la compréhension de vos bases de données et la prise de décision.";
+    var DescriptionEmailing = "Automatisez et optimisez vos campagnes d'emailing. Notre IA analyse le comportement de vos destinataires pour vous suggérer les meilleurs moments d'envoi, les sujets les plus accrocheurs et les contenus pertinents.";
+    var DescriptionDeveloppementJs = "Facilitez le développement de scripts JavaScript pour CRM 365. L'agent IA propose des extraits de code, optimise les scripts existants et identifie les erreurs potentielles.";
+    var DescriptionDeveloppementPlugin = "Concevez des plugins sur mesure pour CRM 365. Notre IA guide les développeurs à travers le processus, en suggérant des architectures de plugins et en validant le code pour garantir la compatibilité.";
+    var DescriptionPowerAutomate = "Automatisez vos workflows avec facilité. L'IA analyse vos tâches récurrentes et crée des flux d'automatisation dans Power Automate, augmentant ainsi l'efficacité opérationnelle.";
+    var DescriptionLearningCRM365 = "Accélérer l'onboarding et la formation sur CRM 365. Notre agent IA fournit des tutoriels adaptatifs, des astuces et des réponses en temps réel aux questions pour garantir une courbe d'apprentissage rapide.";
+    var DescriptionSpecification = "Assurez-vous que vos spécifications techniques et fonctionnelles sont complètes et cohérentes. L'agent IA analyse les documents de spécification pour suggérer des améliorations et identifier les zones d'ambiguïté.";
+    var DescriptionLastDayTask = "Ne perdez jamais de vue vos obligations de fin de journée. L'agent IA rappelle les tâches non résolues, suggère des actions de clôture, prépare une transition en douceur vers le lendemain et vous propose également un e-mail récapitulatif pour une communication fluide.";
+
+            // var selectedValue = document.getElementById("chooseOption").value;
+            // var resultDiv = document.getElementById("resultDiv");
+            var resultDivdescrip = document.getElementById("resultDivDescription");
+
+            // Masquer tous les formulaires par défaut
+            document.getElementById("dailyTaskForm").classList.add("d-none");
+            // document.getElementById("fitgapForm").classList.add("d-none");
+            document.getElementById("formNonDisponible").classList.add("d-none");
+
+            if (selectedValue === "Daily Task") {
+
+                resultDivdescrip.textContent = DescriptionDalilyTask;
+                document.getElementById("dailyTaskForm").classList.remove("d-none"); // Afficher le formulaire 1
+            
+            } else if (selectedValue === "Fitgap") {
+
+                resultDivdescrip.textContent = DescriptionFitgap;
+                // document.getElementById("fitgapForm").classList.remove("d-none"); // Afficher le formulaire 2
+                // Afficher le formulaire "formNonDisponible"
+                document.getElementById("formNonDisponible").classList.remove("d-none");
+            
+            } else if (selectedValue === "Modélisation") {
+                resultDivdescrip.textContent = DescriptionModelisationMCD;
+                // Afficher le formulaire "formNonDisponible"
+                document.getElementById("formNonDisponible").classList.remove("d-none");
+            
+            } else if (selectedValue === "Emailing") {
+                        resultDivdescrip.textContent = DescriptionEmailing;
+                        // Afficher le formulaire "formNonDisponible"
+                        document.getElementById("formNonDisponible").classList.remove("d-none");
+
+            } else if (selectedValue === "Développement js") {
+                resultDivdescrip.textContent = DescriptionDeveloppementJs;
+                // Afficher le formulaire "formNonDisponible"
+                document.getElementById("formNonDisponible").classList.remove("d-none");
+
+            } else if (selectedValue === "Développement plugins") {
+                resultDivdescrip.textContent = DescriptionDeveloppementPlugin;
+                // Afficher le formulaire "formNonDisponible"
+                document.getElementById("formNonDisponible").classList.remove("d-none");
+
+            } else if (selectedValue === "Power automate") {
+                resultDivdescrip.textContent = DescriptionPowerAutomate;
+                // Afficher le formulaire "formNonDisponible"
+                document.getElementById("formNonDisponible").classList.remove("d-none");
+
+            } else if (selectedValue === "Learning CRM 365") {
+                resultDivdescrip.textContent = DescriptionLearningCRM365;
+                // Afficher le formulaire "formNonDisponible"
+                document.getElementById("formNonDisponible").classList.remove("d-none");
+
+            } else if (selectedValue === "Spécifications") {
+                resultDivdescrip.textContent = DescriptionSpecification;
+                // Afficher le formulaire "formNonDisponible"
+                document.getElementById("formNonDisponible").classList.remove("d-none");
+
+            } else if (selectedValue === "Last day tasks") {
+                resultDivdescrip.textContent = DescriptionLastDayTask;
+                // Afficher le formulaire "formNonDisponible"
+                document.getElementById("formNonDisponible").classList.remove("d-none");
+
+            } else {
+                resultDivdescrip.textContent = "Sélectionnez une option valide";
+            }
+
+        }
+
+        // Sélectionnez tous les boutons radio par leur nom
+var radioButtons = document.querySelectorAll('input[name="interesse"]');
+
+// Ajoutez un gestionnaire d'événements "change" à chaque bouton radio
+radioButtons.forEach(function (radioButton) {
+    radioButton.addEventListener("change", function () {
+        var selectedValue = this.value;
+        
+        // Supprimez toutes les classes de couleur de toutes les divs parentes
+        document.querySelectorAll('.form-check').forEach(function (div) {
+            div.classList.remove('couleur-1', 'couleur-2', 'couleur-3', 'couleur-4', 'couleur-5');
+            // Ajoutez d'autres classes de couleur au besoin
+        });
+        
+        // Ajoutez la classe de couleur correspondante à la div parente du bouton radio sélectionné
+        var parentDiv = this.closest('.form-check');
+        if (selectedValue === "1") {
+            parentDiv.classList.add('couleur-1');
+        } else if (selectedValue === "2") {
+            parentDiv.classList.add('couleur-2');
+        } else if (selectedValue === "3") {
+            parentDiv.classList.add('couleur-3');
+        }else if (selectedValue === "4") {
+            parentDiv.classList.add('couleur-4');
+        }else if (selectedValue === "5") {
+            parentDiv.classList.add('couleur-5');
+        }
+        // Ajoutez d'autres conditions pour les autres valeurs
+    });
+});
+
+
+
+ // Récupérer le bouton "Revenir au formulaire"
+ var revenirFormulaireButton = document.getElementById("revenirFormulaire");
+
+// Ajouter un gestionnaire d'événements pour le clic sur le bouton
+revenirFormulaireButton.addEventListener("click", function() {
+    // Réinitialiser "prompt" à une chaîne vide
+    prompt = '';
+
+    // Actualiser la page pour revenir au formulaire vide
+    window.location.href = "{{ url_for('index') }}";
+});
+
+// COPIER LE TEXTE QUAND ON CLIQUE LE BOUTON COPIER
+
+// Sélectionnez le bouton "Copier" par son identifiant
+var copierButton = document.getElementById("copier");
+
+// Sélectionnez la balise qui contient la valeur de prompt
+var promptValue = document.getElementById("promptValue");
+
+// Ajoutez un gestionnaire d'événements au bouton "Copier"
+copierButton.addEventListener("click", function() {
+    // Créez une zone de texte temporaire pour copier le texte
+    var tempTextarea = document.createElement("textarea");
+    
+    // Placez la valeur de prompt dans la zone de texte
+    tempTextarea.value = promptValue.textContent;
+    
+    // Ajoutez la zone de texte à la DOM (document)
+    document.body.appendChild(tempTextarea);
+    
+    // Sélectionnez le contenu de la zone de texte
+    tempTextarea.select();
+    
+    // Exécutez la commande de copie du texte sélectionné
+    document.execCommand("copy");
+    
+    // Supprimez la zone de texte temporaire
+    document.body.removeChild(tempTextarea);
+    
+    // Affichez une alerte ou un message pour indiquer que la copie a réussi
+    alert("La valeur a été copiée avec succès !");
+});
+
+
+
+
+
+
+</script>
+
+<style>
+    .text-primary-light {
+    color: #66B3FF; /* Couleur bleue légère pour Facebook */
+}
+
+.text-info-light {
+    color: #66CC99; /* Couleur verte légère pour LinkedIn */
+}
+
+.text-primary-light {
+    color: #66B3FF; /* Couleur bleue légère pour Twitter */
+}
+
+#remplirFormv {
+        text-align: center; /* Centrer horizontalement le contenu de la div */
+        margin-bottom: 20px; /* Ajouter de l'espace en bas */
+    }
+
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 10vh;
+    }
+
+        /* CSS */
+        .couleur-1 {
+            background-color: #FF5733; /* Rouge */
+        }
+
+
+        .couleur-2 {
+            background-color: #FFA500; /* Orangé */
+        }
+
+        .couleur-3 {
+            background-color: #FFFF00; /* Jaune */
+        }
+
+        .couleur-4 {
+            background-color: #66FF00; /* Vert citron */
+        }
+
+        .couleur-5 {
+            background-color: #33FF57; /* Vert */
+        }
+
+       
+
+
+
+    /* Ajoutez des couleurs pour les autres boutons si nécessaire */
+
+
+
+
+</style>
+
+
+
+</html>
